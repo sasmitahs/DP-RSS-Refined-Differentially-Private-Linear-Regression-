@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "dp-rss"
+version = "1.0.0"
+description = "DP-RSS: Differentially Private Refined Sufficient Statistics for Linear Regression"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Sasmita Harini S", email = "sasmitah@iisc.ac.in"},
+    {name = "Anshoo Tandon", email = "anshoo.tandon@gmail.com"},
+]
+keywords = ["differential-privacy", "linear-regression", "privacy", "statistics"]
+dependencies = ["numpy>=1.20"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "matplotlib>=3.5"]
+
+[project.urls]
+Paper = "https://doi.org/XXXXXXX.XXXXXXX"
+Repository = "https://github.com/sasmitahs/dp-rss"
+
+[tool.setuptools.packages.find]
+include = ["dp_rss*"]
