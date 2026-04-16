@@ -45,7 +45,7 @@ dp-rss/
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/dp-rss.git
+git clone https://github.com/sasmitahs/dp-rss.git
 cd dp-rss
 pip install -e .
 ```
