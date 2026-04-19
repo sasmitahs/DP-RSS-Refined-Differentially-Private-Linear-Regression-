@@ -17,7 +17,7 @@ def dp_rss(
     epsilon: float,
     x_bounds: Tuple[float, float] = (0.0, 1.0),
     y_bounds: Tuple[float, float] = (0.0, 1.0),
-) -> Optional[Tuple[float, float]]:
+) -> Tuple[float, float]:
     """
     DP-RSS for simple linear regression (Algorithm 3 in the paper).
 
@@ -43,7 +43,7 @@ def dp_rss(
     -------
     (alpha_hat, beta_hat) : tuple of float
         Private estimates of slope and intercept on the *original* scale.
-        Returns None if the noisy sample size or determinant is ≤ 0.
+        Returns (0.5, 0) if the noisy sample size or determinant is ≤ 0.
 
     Privacy guarantee
     -----------------
@@ -63,7 +63,7 @@ def dp_rss(
 
     result = _dp_rss_unit(x_norm, y_norm, epsilon)
     if result is None:
-        return None
+        return (0.5, 0)
 
     alpha_norm, beta_norm = result
 
